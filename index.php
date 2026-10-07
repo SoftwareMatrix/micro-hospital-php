@@ -121,102 +121,17 @@
       </div>
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <div class="play_btn">
-                      <button>
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                    <h1>
-                      Mico <br>
-                      <span>
-                        Hospital
-                      </span>
-                    </h1>
-                    <p>
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
-                    </p>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="img-box">
-                    <img src="images/slider-img.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
+          <?php foreach ($slides as $index => $slide): ?>
+          <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+            <div class="container"><div class="row">
+              <div class="col-md-6"><div class="detail-box">
+                <h1><?= e($slide['title']) ?><br><span><?= e($slide['subtitle']) ?></span></h1>
+                <p><?= e($slide['description']) ?></p><a href="contact.php">Contact Us</a>
+              </div></div>
+              <div class="col-md-6"><div class="img-box"><img src="images/<?= e($slide['image']) ?>" alt="Hospital"></div></div>
+            </div></div>
           </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <div class="play_btn">
-                      <button>
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                    <h1>
-                      Mico <br>
-                      <span>
-                        Hospital
-                      </span>
-                    </h1>
-                    <p>
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
-                    </p>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="img-box">
-                    <img src="images/slider-img.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <div class="play_btn">
-                      <button>
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                    <h1>
-                      Mico <br>
-                      <span>
-                        Hospital
-                      </span>
-                    </h1>
-                    <p>
-                      when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
-                    </p>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="img-box">
-                    <img src="images/slider-img.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
         <div class="carousel_btn-box">
           <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
@@ -526,24 +441,9 @@
                 Useful link
               </h5>
               <div class="info_links_menu">
-                <a class="active" href="index.php">
-                  Home
-                </a>
-                <a href="about.php">
-                  About
-                </a>
-                <a href="treatment.php">
-                  Treatment
-                </a>
-                <a href="doctor.php">
-                  Doctors
-                </a>
-                <a href="testimonial.php">
-                  Testimonial
-                </a>
-                <a href="contact.php">
-                  Contact us
-                </a>
+                <?php foreach ($navigation as $item): ?>
+                <a class="<?= basename($_SERVER['PHP_SELF']) === $item['href'] ? 'active' : '' ?>" href="<?= e($item['href']) ?>"><?= e($item['label']) ?></a>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>

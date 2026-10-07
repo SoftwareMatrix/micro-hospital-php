@@ -8,6 +8,11 @@ $navigation = [
     ['label' => 'Testimonial', 'href' => 'testimonial.php'],
     ['label' => 'Contact Us', 'href' => 'contact.php'],
 ];
+$slides = [
+    ['title' => 'Mico', 'subtitle' => 'Hospital', 'description' => 'Quality care from our experienced medical team.', 'image' => 'slider-img.jpg'],
+    ['title' => 'Mico', 'subtitle' => 'Hospital', 'description' => 'Book an appointment with a doctor who can help.', 'image' => 'slider-img.jpg'],
+    ['title' => 'Mico', 'subtitle' => 'Hospital', 'description' => 'Contact our team to learn more about our services.', 'image' => 'slider-img.jpg'],
+];
 $departments = ['Nephrologist Care', 'Eye Care', 'Pediatrician Clinic', 'Parental Care'];
 $doctors = [
     ['name' => 'Hennry', 'qualification' => 'MBBS', 'image' => 'team1.jpg'],

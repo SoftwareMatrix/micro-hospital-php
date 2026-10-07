@@ -215,24 +215,9 @@
                 Useful link
               </h5>
               <div class="info_links_menu">
-                <a href="index.php">
-                  Home
-                </a>
-                <a class="active" href="about.php">
-                  About
-                </a>
-                <a href="treatment.php">
-                  Treatment
-                </a>
-                <a href="doctor.php">
-                  Doctors
-                </a>
-                <a href="testimonial.php">
-                  Testimonial
-                </a>
-                <a href="contact.php">
-                  Contact us
-                </a>
+                <?php foreach ($navigation as $item): ?>
+                <a class="<?= basename($_SERVER['PHP_SELF']) === $item['href'] ? 'active' : '' ?>" href="<?= e($item['href']) ?>"><?= e($item['label']) ?></a>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
